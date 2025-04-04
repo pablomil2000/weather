@@ -1,0 +1,17 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+
+.bg-day {
+  background-color: #32b1fa;
+}
+
+.bg-night {
+  background-color: #121212;
+  color: #fff;
+}
