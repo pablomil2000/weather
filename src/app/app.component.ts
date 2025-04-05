@@ -4,12 +4,13 @@ import { DatePipe } from '@angular/common';
 import { GeolocationService } from './services/geolocation.service';
 import { MainComponent } from "./componets/main/main.component";
 import { TemperatureComponent } from './componets/temperature/temperature.component';
+import { RainComponent } from "./components/rain/rain.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: true,
-  imports: [MainComponent, TemperatureComponent],
+  imports: [MainComponent, TemperatureComponent, RainComponent],
   providers: [DatePipe]
 })
 export class AppComponent implements OnInit {
@@ -27,7 +28,7 @@ export class AppComponent implements OnInit {
 
       this.OpenWeatherApiService.getWeatherData(this.position[0], this.position[1]).subscribe((weatherData) => {
         this.weatherData = weatherData;
-        console.log(weatherData.current);
+        console.log(weatherData);
       });
     });
   }

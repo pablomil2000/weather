@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="col-1">
+        <!-- wind speed -->
+        <p [style]="{transform: 'rotate(' + windDirection + 'deg)'}">⬆️</p>
+        <p>Wind Speed: {{windSpeed}} km/h</p>
+    </div>
+    <div class="col-2">
+        <!-- rain -->
+        <p>Rain: {{rain}} mm</p>
+        <p>Precipitation: {{precipitation}} mm</p>
+        <p>Humidity: {{humidity}} %</p>
+        <p>Cloud Cover: {{cloudCover}} %</p>
+    </div>
+</div>

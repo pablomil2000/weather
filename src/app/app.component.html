@@ -4,7 +4,6 @@
 [isDay]="weatherData?.current?.is_day"
 [position]="position"
 [weaterCodeApi]="weatherData?.current?.weather_code"
-
 >
 </app-main>
 
@@ -12,3 +11,12 @@
 [MaxTemp]="weatherData?.daily?.temperature_2m_max[0]" 
 [MinTemp]="weatherData?.daily?.temperature_2m_min[0]"
 ></app-temperature>
+
+<app-rain
+[cloudCover]="weatherData?.current?.cloud_cover"
+[humidity]="weatherData?.current?.relative_humidity_2m"
+[windSpeed]="weatherData?.current?.wind_speed_10m"
+[windDirection]="weatherData?.current?.wind_direction_10m"
+[rain]="weatherData?.current?.rain"
+[precipitation]="weatherData?.current?.precipitation"
+></app-rain>
