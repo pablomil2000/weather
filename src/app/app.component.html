@@ -1,8 +1,10 @@
 <app-main 
-[today] ="weatherData?.daily?.time[0]"
+[today] ="weatherData?.current?.time"
 [currentTemperature]="weatherData?.current?.temperature_2m" 
 [isDay]="weatherData?.current?.is_day"
 [position]="position"
+[weaterCodeApi]="weatherData?.current?.weather_code"
+
 >
 </app-main>
 

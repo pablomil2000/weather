@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
       this.OpenWeatherApiService.getWeatherData(this.position[0], this.position[1]).subscribe((weatherData) => {
         this.weatherData = weatherData;
-        console.log(weatherData);
+        console.log(weatherData.current);
       });
     });
   }
