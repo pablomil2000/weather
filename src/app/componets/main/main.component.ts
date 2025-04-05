@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 
@@ -9,4 +10,12 @@ import { Component, Input } from '@angular/core';
 export class MainComponent {
   @Input() currentTemperature: number = 0;
   @Input() isDay: number = 0;
+  @Input() position: number[] = [];
+  @Input() today: string = '';
+
+  fechaHoy: string = '';
+
+  ngOnInit(): void {
+    this.fechaHoy = formatDate(this.today, 'dd-MM-yyyy', 'en');  
+  }
 }

@@ -1,4 +1,7 @@
 <div [class]="isDay ? 'bg-day' : 'bg-night'" class="container">
-    <!-- <h1>{{CityName}}</h1> -->
-    <p>{{currentTemperature}} ºC</p>
+    <h3 id="today">{{this.fechaHoy}}</h3>
+    <h3 id="current-temperature">{{currentTemperature}} ºC</h3>
+    <footer id="main-footer">
+        <p>{{position[0]}}, {{position[1]}}</p>
+    </footer>
 </div>

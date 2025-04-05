@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #fdfbd8;
+}
+
+.temp-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+p{
+    font-size: 1.5rem;
+}
