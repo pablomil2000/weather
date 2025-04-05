@@ -18,7 +18,9 @@
 }
 
 .bg-night {
-  background-color: #121212;
+  background-image: url('../../../../public/images/main/night.jpg');
+  background-size: cover;
+  background-position: center;
   color: #fff;
 }
 
