@@ -1,39 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { IpApiService } from './services/ip-api.service';
 import { OpenWeatherApiService } from './services/open-weather-api.service';
 import { DatePipe } from '@angular/common';
-import { MainComponent } from './componets/main/main.component';
+import { GeolocationService } from './services/geolocation.service';
+import { MainComponent } from "./componets/main/main.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: true,
-  imports: [DatePipe, MainComponent],
+  imports: [MainComponent],
   providers: [DatePipe]
 })
 export class AppComponent implements OnInit {
-  ipData: any;
+  location: any;
   weatherData: any;
-  new: any;
-  constructor(private ipApiService: IpApiService, private openWeatherApiService: OpenWeatherApiService, private datePipe: DatePipe) {}
+  constructor(private geolocationService: GeolocationService, private OpenWeatherApiService: OpenWeatherApiService ) {}
   ngOnInit(): void {
-    this.ipApiService.getIpInfo().subscribe({
-      next: (data) => {
-        this.ipData = data;
-        console.log(this.ipData);
-        // Only fetch weather data after we have IP data
-        if (data.lat && data.lon) {
-          this.openWeatherApiService.getWeatherData(data.lat, data.lon).subscribe({
-            next: (weatherData) => {
-              this.weatherData = weatherData;
-              console.table(this.weatherData);
-              
-            },
-            error: (error) => console.error('Error fetching weather data:', error)
-          });
-        }
-      },
-      error: (error) => console.error('Error fetching IP data:', error)
+
+    this.geolocationService.getLocation().subscribe((location) => {
+      this.location = location;
+
+      this.OpenWeatherApiService.getWeatherData(this.location.coords.latitude, this.location.coords.longitude).subscribe((weatherData) => {
+        this.weatherData = weatherData;
+        // console.table(this.weatherData);
+      });
     });
   }
 }

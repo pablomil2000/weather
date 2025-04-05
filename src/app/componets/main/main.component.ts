@@ -7,7 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
-  @Input() CityName: string = '';
   @Input() currentTemperature: number = 0;
   @Input() isDay: number = 0;
 }
