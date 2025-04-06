@@ -26,10 +26,10 @@ export class AppComponent implements OnInit {
       this.location = location;
       this.position = [this.location.coords.latitude, this.location.coords.longitude];
 
-      this.OpenWeatherApiService.getWeatherData(this.position[0], this.position[1]).subscribe((weatherData) => {
-        this.weatherData = weatherData;
-        console.log(weatherData);
-      });
+    this.OpenWeatherApiService.getWeatherData(this.position[0], this.position[1]).subscribe((weatherData) => {
+      this.weatherData = weatherData;
+      console.table(weatherData.hourly.rain);
     });
+  });
   }
 }

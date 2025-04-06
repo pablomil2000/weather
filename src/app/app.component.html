@@ -13,6 +13,7 @@
 ></app-temperature>
 
 <app-rain
+[rainHourly]="weatherData?.hourly?.rain"
 [cloudCover]="weatherData?.current?.cloud_cover"
 [humidity]="weatherData?.current?.relative_humidity_2m"
 [windSpeed]="weatherData?.current?.wind_speed_10m"
