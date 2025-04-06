@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OpenWeatherApiService } from './services/open-weather-api.service';
 import { DatePipe } from '@angular/common';
 import { GeolocationService } from './services/geolocation.service';
-import { MainComponent } from "./componets/main/main.component";
-import { TemperatureComponent } from './componets/temperature/temperature.component';
+import { MainComponent } from "./components/main/main.component";
+import { TemperatureComponent } from './components/temperature/temperature.component';
 import { RainComponent } from "./components/rain/rain.component";
 
 @Component({
