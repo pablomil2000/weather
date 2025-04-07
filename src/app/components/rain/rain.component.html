@@ -11,9 +11,7 @@
         <p>Humidity: {{humidity}} %</p>
         <p>Cloud Cover: {{cloudCover}} %</p>
     </div>
-
-    <ag-charts id="rain-chart"
-    style="height: 100%"
-    [options]="chartOptions">
-   </ag-charts>
+    <div class="col-3">
+        <canvas id="rainChart"></canvas>
+    </div>
 </div>
